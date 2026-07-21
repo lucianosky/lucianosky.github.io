@@ -17,9 +17,9 @@ const { lang = 'en' } = Astro.props;
     </div>
 
     <div class="lang-toggle">
-      <button class={lang === 'en' ? 'active' : ''} aria-label="English">EN</button>
+      <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
       <span aria-hidden="true">#</span>
-      <button class={lang === 'pt' ? 'active' : ''} aria-label="Português">pt</button>
+      <button class="lang-btn" data-lang="pt" aria-label="Português">pt</button>
     </div>
 
     <!-- Mobile hamburger -->

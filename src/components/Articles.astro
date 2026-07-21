@@ -1,40 +1,25 @@
 ---
 const articles = [
-  {
-    date: '2026-03',
-    title: 'The Brew architecture',
-    subtitle: 'A pragmatic layering for SwiftUI apps.',
-    href: '#',
-    placeholder: true,
-  },
-  {
-    date: '2025-11',
-    title: 'What 8-bit assembly taught me about Swift concurrency',
-    subtitle: 'Forty years of typed characters.',
-    href: '#',
-    placeholder: true,
-  },
-  {
-    date: '2025-06',
-    title: 'Modeling espresso extraction in Swift Charts',
-    subtitle: 'Precision as a hobby.',
-    href: '#',
-    placeholder: true,
-  },
+  { date: '2026-03', title: 'The Brew architecture',                                    href: '#' },
+  { date: '2025-11', title: 'What 8-bit assembly taught me about Swift concurrency',    href: '#' },
+  { date: '2025-06', title: 'Modeling espresso extraction in Swift Charts',             href: '#' },
 ];
 ---
 
 <section class="articles" id="articles">
   <div class="section-inner">
-    <h2 class="section-title"><span class="num">03</span> Articles</h2>
+    <h2 class="section-title">
+      <span class="num">03</span>
+      <span data-i18n="articles.title">Articles</span>
+    </h2>
 
     <div class="articles-list">
-      {articles.map(article => (
-        <a href={article.href} class={`article-row ${article.placeholder ? 'is-placeholder' : ''}`}>
+      {articles.map((article, i) => (
+        <a href={article.href} class="article-row is-placeholder">
           <span class="article-date">{article.date}</span>
           <div class="article-body">
             <span class="article-title">{article.title}</span>
-            <span class="article-subtitle">{article.subtitle}</span>
+            <span class="article-subtitle" data-i18n={`articles.entries.${i}.subtitle`}></span>
           </div>
           <span class="article-arrow">→</span>
         </a>
@@ -51,10 +36,7 @@ const articles = [
     border-top: 1px solid var(--border);
   }
 
-  .section-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  .section-inner { max-width: 900px; margin: 0 auto; }
 
   .section-title {
     font-family: var(--font-display);
@@ -72,10 +54,7 @@ const articles = [
     vertical-align: middle;
   }
 
-  .articles-list {
-    display: flex;
-    flex-direction: column;
-  }
+  .articles-list { display: flex; flex-direction: column; }
 
   .article-row {
     display: grid;
@@ -88,7 +67,6 @@ const articles = [
   }
 
   .article-row:last-child { border-bottom: 1px solid var(--border); }
-
   .article-row:hover { opacity: 0.7; }
   .is-placeholder { opacity: 0.5; }
   .is-placeholder:hover { opacity: 0.7; }
@@ -99,11 +77,7 @@ const articles = [
     color: var(--text-muted);
   }
 
-  .article-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
+  .article-body { display: flex; flex-direction: column; gap: 0.15rem; }
 
   .article-title {
     font-family: var(--font-display);
@@ -120,10 +94,7 @@ const articles = [
     font-style: italic;
   }
 
-  .article-arrow {
-    color: var(--accent);
-    font-size: 1rem;
-  }
+  .article-arrow { color: var(--accent); font-size: 1rem; }
 
   @media (max-width: 600px) {
     .articles { padding: 4rem 1.25rem; }

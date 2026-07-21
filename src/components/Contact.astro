@@ -1,41 +1,37 @@
 ---
 ---
 
-<!-- CV Banner -->
 <div class="cv-banner">
   <div class="cv-inner">
     <div class="cv-text">
-      <h3>The full trajectory, on paper.</h3>
-      <p>Forty years condensed into two pages.</p>
+      <h3 data-i18n="cv.headline">The full trajectory, on paper.</h3>
+      <p data-i18n="cv.subline">Forty years condensed into two pages.</p>
     </div>
-    <a href="/cv.pdf" class="btn-cv" download>DOWNLOAD CV ↓</a>
+    <a href="/cv.pdf" class="btn-cv" download data-i18n="cv.button">DOWNLOAD CV ↓</a>
   </div>
 </div>
 
-<!-- Contact -->
 <section class="contact" id="contact">
   <div class="section-inner">
-    <h2 class="section-title"><span class="num">04</span> Contact</h2>
+    <h2 class="section-title">
+      <span class="num">04</span>
+      <span data-i18n="contact.title">Contact</span>
+    </h2>
 
-    <p class="contact-line">
-      Open to senior iOS and mobile architecture roles,<br />
+    <p class="contact-line" data-i18n="contact.line">
+      Open to senior iOS and mobile architecture roles,
       remote or hybrid, anywhere on Earth.
     </p>
 
     <div class="contact-links">
       <a href="mailto:luciano@example.com" class="contact-btn">luciano@example.com</a>
-      <a href="https://linkedin.com/in/lucianosky" class="contact-btn" target="_blank" rel="noopener">
-        linkedin ↗
-      </a>
-      <a href="https://github.com/lucianosky" class="contact-btn" target="_blank" rel="noopener">
-        github ↗
-      </a>
+      <a href="https://linkedin.com/in/lucianosky" class="contact-btn" target="_blank" rel="noopener">linkedin ↗</a>
+      <a href="https://github.com/lucianosky" class="contact-btn" target="_blank" rel="noopener">github ↗</a>
     </div>
   </div>
 </section>
 
 <style>
-  /* CV Banner */
   .cv-banner {
     position: relative;
     z-index: 1;
@@ -86,17 +82,13 @@
 
   .btn-cv:hover { opacity: 0.85; }
 
-  /* Contact */
   .contact {
     position: relative;
     z-index: 1;
     padding: 6rem 2.5rem;
   }
 
-  .section-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  .section-inner { max-width: 900px; margin: 0 auto; }
 
   .section-title {
     font-family: var(--font-display);
@@ -122,11 +114,7 @@
     margin-bottom: 2rem;
   }
 
-  .contact-links {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
+  .contact-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
   .contact-btn {
     display: inline-block;
@@ -139,15 +127,11 @@
     transition: border-color 0.2s, color 0.2s;
   }
 
-  .contact-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
+  .contact-btn:hover { border-color: var(--accent); color: var(--accent); }
 
   @media (max-width: 600px) {
     .cv-banner { padding: 2.5rem 1.25rem; }
     .cv-inner { flex-direction: column; align-items: flex-start; }
     .contact { padding: 4rem 1.25rem; }
-    .contact-line br { display: none; }
   }
 </style>

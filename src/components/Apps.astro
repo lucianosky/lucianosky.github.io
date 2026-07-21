@@ -1,47 +1,34 @@
 ---
 const apps = [
-  {
-    name: 'Doppio',
-    badge: 'BETA',
-    description: 'A guide to the specialty coffee shops of Porto Alegre. Curated roasters, brew methods, and neighborhood maps.',
-    tags: ['iOS', 'Swift', 'Brew architecture'],
-    image: '/doppio-screenshot.png',
-  },
-  {
-    name: 'Raipe',
-    badge: 'IN DEVELOPMENT',
-    description: 'Commercial iOS app built for a client, in active development. Swift end to end.',
-    tags: ['iOS', 'Swift', 'Client work'],
-    image: '/raipe-screenshot.png',
-  },
+  { name: 'Doppio', badge: 'BETA',           tags: ['iOS', 'Swift', 'Brew architecture'], image: '/doppio-screenshot.png'  },
+  { name: 'Raipe',  badge: 'IN DEVELOPMENT', tags: ['iOS', 'Swift', 'Client work'],       image: '/raipe-screenshot.png'   },
 ];
 ---
 
 <section class="apps" id="apps">
   <div class="section-inner">
-    <h2 class="section-title"><span class="num">02</span> Apps</h2>
+    <h2 class="section-title">
+      <span class="num">02</span>
+      <span data-i18n="apps.title">Apps</span>
+    </h2>
 
     <div class="apps-grid">
-      {apps.map(app => (
+      {apps.map((app, i) => (
         <div class="app-card">
           <div class="app-image">
-            {app.image
-              ? <img src={app.image} alt={`${app.name} screenshot`} loading="lazy" />
-              : <div class="image-placeholder">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                  <span>{app.name} — screenshots coming</span>
-                </div>
-            }
+            <div class="image-placeholder">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
           </div>
           <div class="app-body">
             <div class="app-header">
               <span class="app-name">{app.name}</span>
               <span class="app-badge">{app.badge}</span>
             </div>
-            <p class="app-description">{app.description}</p>
+            <p class="app-description" data-i18n={`apps.entries.${i}.description`}></p>
             <div class="app-tags">
               {app.tags.map(tag => <span class="tag">{tag}</span>)}
             </div>
@@ -60,10 +47,7 @@ const apps = [
     border-top: 1px solid var(--border);
   }
 
-  .section-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  .section-inner { max-width: 900px; margin: 0 auto; }
 
   .section-title {
     font-family: var(--font-display);
@@ -98,32 +82,15 @@ const apps = [
 
   .app-image {
     aspect-ratio: 16/9;
-    background: rgba(255, 255, 255, 0.03);
-    overflow: hidden;
-  }
-
-  .app-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .image-placeholder {
-    width: 100%;
-    height: 100%;
+    background: rgba(255,255,255,0.03);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    color: var(--text-dim);
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
   }
 
-  .app-body {
-    padding: 1.25rem;
-  }
+  .image-placeholder { color: var(--text-dim); }
+
+  .app-body { padding: 1.25rem; }
 
   .app-header {
     display: flex;
@@ -157,11 +124,7 @@ const apps = [
     margin-bottom: 0.75rem;
   }
 
-  .app-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
+  .app-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
   .tag {
     font-family: var(--font-mono);

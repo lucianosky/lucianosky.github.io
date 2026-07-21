@@ -33,6 +33,42 @@ const {
   <body>
     <slot />
   </body>
+
+  <script>
+    import { translations } from '../i18n/translations';
+
+    type Lang = 'en' | 'pt';
+
+    function get(obj: any, path: string): string {
+      return path.split('.').reduce((acc, key) => acc?.[key], obj) ?? '';
+    }
+
+    function applyLang(lang: Lang) {
+      const t = translations[lang];
+      document.querySelectorAll<HTMLElement>('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n')!;
+        const value = get(t, key);
+        if (value) el.textContent = value;
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+
+      // update toggle state
+      document.querySelectorAll<HTMLButtonElement>('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    // Init on load
+    const saved = (localStorage.getItem('lang') as Lang) || 'en';
+    applyLang(saved);
+
+    // Listen for toggle clicks
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.lang-btn');
+      if (btn?.dataset.lang) applyLang(btn.dataset.lang as Lang);
+    });
+  </script>
 </html>
 
 <style is:global>

@@ -1,54 +1,29 @@
 ---
 const entries = [
-  {
-    period: '2019 — now',
-    title: 'Independent iOS Developer & Mobile Architect',
-    place: 'Porto Alegre · remote',
-    description: 'Building Doppio and Raipe, and consulting on iOS architecture for product teams. Swift, SwiftUI, and the occasional strong opinion about dependency graphs.',
-  },
-  {
-    period: '2010 — 2019',
-    title: 'Mobile Architect',
-    place: 'Placeholder Corp — replace with real role',
-    description: 'Led the iOS practice through the transition from Objective-C to Swift; shipped and maintained consumer apps used by millions.',
-    placeholder: true,
-  },
-  {
-    period: '1996 — 2010',
-    title: 'Senior Software Engineer',
-    place: 'Placeholder Systems — replace with real role',
-    description: 'Desktop and embedded systems in C and C++. Learned that shipping is a feature.',
-    placeholder: true,
-  },
-  {
-    period: '1992',
-    title: "Master's in Computer Science",
-    place: 'UFRGS — Universidade Federal do Rio Grande do Sul',
-    description: 'Research placeholder — replace with thesis topic.',
-    placeholder: true,
-  },
-  {
-    period: '1984',
-    title: 'First line of assembly',
-    place: 'A TK85, a bedroom, a cassette deck',
-    description: 'Where it all started.',
-  },
+  { period: '2019 — now',  placeholder: false },
+  { period: '2010 — 2019', placeholder: true  },
+  { period: '1996 — 2010', placeholder: true  },
+  { period: '1992',        placeholder: true  },
+  { period: '1984',        placeholder: false },
 ];
 ---
 
 <section class="work" id="work">
   <div class="section-inner">
-    <h2 class="section-title"><span class="num">01</span> Work</h2>
+    <h2 class="section-title">
+      <span class="num">01</span>
+      <span data-i18n="work.title">Work</span>
+    </h2>
 
     <div class="timeline">
-      {entries.map(entry => (
+      {entries.map((entry, i) => (
         <div class={`timeline-entry ${entry.placeholder ? 'is-placeholder' : ''}`}>
           <div class="entry-period">{entry.period}</div>
           <div class="entry-dot" aria-hidden="true"></div>
           <div class="entry-body">
-            <h3>{entry.title}</h3>
-            <p class="entry-place">{entry.place}</p>
-            <p class="entry-desc">{entry.description}</p>
+            <h3 data-i18n={`work.entries.${i}.title`}></h3>
+            <p class="entry-place" data-i18n={`work.entries.${i}.place`}></p>
+            <p class="entry-desc" data-i18n={`work.entries.${i}.description`}></p>
           </div>
         </div>
       ))}
@@ -88,7 +63,6 @@ const entries = [
   .timeline {
     display: flex;
     flex-direction: column;
-    gap: 0;
   }
 
   .timeline-entry {
@@ -99,7 +73,6 @@ const entries = [
     position: relative;
   }
 
-  /* Vertical line */
   .timeline-entry::after {
     content: '';
     position: absolute;
@@ -129,10 +102,6 @@ const entries = [
     flex-shrink: 0;
     position: relative;
     z-index: 1;
-  }
-
-  .entry-body {
-    padding-top: 0;
   }
 
   .entry-body h3 {
@@ -168,15 +137,11 @@ const entries = [
       padding-bottom: 2rem;
       padding-left: 1.5rem;
       border-left: 1px solid var(--border);
-      position: relative;
     }
 
     .timeline-entry::after { display: none; }
 
-    .entry-period {
-      text-align: left;
-      margin-bottom: 0.35rem;
-    }
+    .entry-period { text-align: left; margin-bottom: 0.35rem; }
 
     .entry-dot {
       position: absolute;
