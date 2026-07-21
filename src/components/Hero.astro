@@ -1,0 +1,224 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-bg">
+    <!-- Replace hero-photo.jpg with actual photo in /public -->
+    <div class="hero-photo" style="background-image: url('/hero-photo.jpg')"></div>
+    <div class="hero-gradient"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="role">Senior iOS Developer · Mobile Architect</p>
+
+    <h1>
+      <span class="line-white">Code with</span>
+      <span class="line-accent">gravity.</span>
+    </h1>
+
+    <p class="bio">
+      Forty years of writing software, from 8-bit assembly to Swift.<br />
+      The night sky and the inside of a coffee cup share the same<br class="bio-break" />
+      darkness — I work in both.
+    </p>
+
+    <div class="ctas">
+      <a href="#work" class="btn-primary">SEE THE WORK</a>
+      <a href="/cv.pdf" class="btn-secondary" download>download_cv.pdf ↓</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-value">40+</span>
+        <span class="stat-label">years coding</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">12</span>
+        <span class="stat-label">apps shipped</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">MSc</span>
+        <span class="stat-label">CS · UFRGS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="nebula-tag">RA 05h 35m · DEC -05° 23' — M42, THE ORION NEBULA</div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(21, 16, 10, 0.92) 40%, rgba(21, 16, 10, 0.2) 100%),
+      linear-gradient(to top, rgba(21, 16, 10, 0.8) 0%, transparent 40%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 2.5rem;
+    max-width: 640px;
+  }
+
+  .role {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.0;
+    margin-bottom: 1.5rem;
+  }
+
+  .line-white {
+    display: block;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    color: var(--text);
+  }
+
+  .line-accent {
+    display: block;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    color: var(--accent);
+  }
+
+  .bio {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .ctas {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1.5px solid var(--text);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .btn-secondary {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text); }
+
+  .stats {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .nebula-tag {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 100svh;
+      align-items: flex-start;
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero-photo {
+      background-position: top center;
+      opacity: 0.3;
+    }
+
+    .hero-gradient {
+      background:
+        linear-gradient(to bottom, rgba(21, 16, 10, 0.6) 0%, rgba(21, 16, 10, 0.95) 60%);
+    }
+
+    .hero-content {
+      padding: 0 1.25rem;
+      max-width: 100%;
+    }
+
+    .bio br.bio-break { display: none; }
+
+    .stats { gap: 1.5rem; }
+
+    .nebula-tag { display: none; }
+  }
+</style>

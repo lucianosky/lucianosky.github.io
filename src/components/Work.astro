@@ -1,0 +1,188 @@
+---
+const entries = [
+  {
+    period: '2019 — now',
+    title: 'Independent iOS Developer & Mobile Architect',
+    place: 'Porto Alegre · remote',
+    description: 'Building Doppio and Raipe, and consulting on iOS architecture for product teams. Swift, SwiftUI, and the occasional strong opinion about dependency graphs.',
+  },
+  {
+    period: '2010 — 2019',
+    title: 'Mobile Architect',
+    place: 'Placeholder Corp — replace with real role',
+    description: 'Led the iOS practice through the transition from Objective-C to Swift; shipped and maintained consumer apps used by millions.',
+    placeholder: true,
+  },
+  {
+    period: '1996 — 2010',
+    title: 'Senior Software Engineer',
+    place: 'Placeholder Systems — replace with real role',
+    description: 'Desktop and embedded systems in C and C++. Learned that shipping is a feature.',
+    placeholder: true,
+  },
+  {
+    period: '1992',
+    title: "Master's in Computer Science",
+    place: 'UFRGS — Universidade Federal do Rio Grande do Sul',
+    description: 'Research placeholder — replace with thesis topic.',
+    placeholder: true,
+  },
+  {
+    period: '1984',
+    title: 'First line of assembly',
+    place: 'A TK85, a bedroom, a cassette deck',
+    description: 'Where it all started.',
+  },
+];
+---
+
+<section class="work" id="work">
+  <div class="section-inner">
+    <h2 class="section-title"><span class="num">01</span> Work</h2>
+
+    <div class="timeline">
+      {entries.map(entry => (
+        <div class={`timeline-entry ${entry.placeholder ? 'is-placeholder' : ''}`}>
+          <div class="entry-period">{entry.period}</div>
+          <div class="entry-dot" aria-hidden="true"></div>
+          <div class="entry-body">
+            <h3>{entry.title}</h3>
+            <p class="entry-place">{entry.place}</p>
+            <p class="entry-desc">{entry.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .work {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 3.5rem;
+    line-height: 1;
+  }
+
+  .num {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 0.5em;
+    vertical-align: middle;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-entry {
+    display: grid;
+    grid-template-columns: 140px 1px 1fr;
+    gap: 0 2rem;
+    padding-bottom: 2.5rem;
+    position: relative;
+  }
+
+  /* Vertical line */
+  .timeline-entry::after {
+    content: '';
+    position: absolute;
+    left: calc(140px + 2rem - 0.5px);
+    top: 0.5rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .timeline-entry:last-child::after { display: none; }
+
+  .entry-period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    padding-top: 0.25rem;
+    text-align: right;
+  }
+
+  .entry-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin: 0.35rem auto 0;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .entry-body {
+    padding-top: 0;
+  }
+
+  .entry-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .entry-place {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .entry-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  .is-placeholder .entry-place { color: var(--text-dim); font-style: italic; }
+
+  @media (max-width: 600px) {
+    .work { padding: 4rem 1.25rem; }
+
+    .timeline-entry {
+      grid-template-columns: 1fr;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem;
+      border-left: 1px solid var(--border);
+      position: relative;
+    }
+
+    .timeline-entry::after { display: none; }
+
+    .entry-period {
+      text-align: left;
+      margin-bottom: 0.35rem;
+    }
+
+    .entry-dot {
+      position: absolute;
+      left: -5px;
+      top: 0.3rem;
+      margin: 0;
+    }
+  }
+</style>

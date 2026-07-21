@@ -1,0 +1,66 @@
+---
+interface Props {
+  density?: number;
+}
+const { density = 120 } = Astro.props;
+---
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<style>
+  #starfield {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+</style>
+
+<script define:vars={{ density }}>
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function randomBetween(a, b) {
+    return a + Math.random() * (b - a);
+  }
+
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const count = Math.floor((canvas.width * canvas.height) / 10000 * density / 10);
+
+    for (let i = 0; i < count; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const r = randomBetween(0.3, 1.2);
+      const alpha = randomBetween(0.2, 0.9);
+
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(242, 230, 208, ${alpha})`;
+      ctx.fill();
+    }
+
+    // occasional warm accent star
+    const accentCount = Math.floor(count / 25);
+    for (let i = 0; i < accentCount; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const r = randomBetween(0.4, 0.9);
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(232, 92, 13, ${randomBetween(0.3, 0.7)})`;
+      ctx.fill();
+    }
+  }
+
+  resize();
+  drawStars();
+  window.addEventListener('resize', () => { resize(); drawStars(); });
+</script>

@@ -1,0 +1,186 @@
+---
+interface Props {
+  lang?: 'en' | 'pt';
+}
+const { lang = 'en' } = Astro.props;
+---
+
+<header>
+  <nav>
+    <a href="/" class="wordmark">LUCIANO SCLOVSKY</a>
+
+    <div class="nav-center">
+      <a href="#work"><span class="num">01</span> WORK</a>
+      <a href="#apps"><span class="num">02</span> APPS</a>
+      <a href="#articles"><span class="num">03</span> ARTICLES</a>
+      <a href="#contact"><span class="num">04</span> CONTACT</a>
+    </div>
+
+    <div class="lang-toggle">
+      <button class={lang === 'en' ? 'active' : ''} aria-label="English">EN</button>
+      <span aria-hidden="true">#</span>
+      <button class={lang === 'pt' ? 'active' : ''} aria-label="Português">pt</button>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="#work" class="mobile-link"><span class="num">01</span> WORK</a>
+    <a href="#apps" class="mobile-link"><span class="num">02</span> APPS</a>
+    <a href="#articles" class="mobile-link"><span class="num">03</span> ARTICLES</a>
+    <a href="#contact" class="mobile-link"><span class="num">04</span> CONTACT</a>
+  </div>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(21, 16, 10, 0.95) 0%, transparent 100%);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-center a {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text);
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-center a:hover { color: var(--accent); }
+
+  .num {
+    color: var(--accent);
+    margin-right: 0.25rem;
+  }
+
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .lang-toggle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    padding: 0;
+    transition: color 0.2s;
+  }
+
+  .lang-toggle button.active {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .mobile-menu {
+    background: rgba(21, 16, 10, 0.98);
+    padding: 1.5rem 2rem 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .mobile-link {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.25rem;
+    }
+
+    .nav-center,
+    .lang-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const links = menu?.querySelectorAll('a');
+
+  toggle?.addEventListener('click', () => {
+    const open = menu?.hidden === false;
+    menu!.hidden = open;
+    toggle.setAttribute('aria-expanded', String(!open));
+  });
+
+  links?.forEach(link => {
+    link.addEventListener('click', () => {
+      menu!.hidden = true;
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

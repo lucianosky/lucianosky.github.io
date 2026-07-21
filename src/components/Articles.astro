@@ -1,0 +1,138 @@
+---
+const articles = [
+  {
+    date: '2026-03',
+    title: 'The Brew architecture',
+    subtitle: 'A pragmatic layering for SwiftUI apps.',
+    href: '#',
+    placeholder: true,
+  },
+  {
+    date: '2025-11',
+    title: 'What 8-bit assembly taught me about Swift concurrency',
+    subtitle: 'Forty years of typed characters.',
+    href: '#',
+    placeholder: true,
+  },
+  {
+    date: '2025-06',
+    title: 'Modeling espresso extraction in Swift Charts',
+    subtitle: 'Precision as a hobby.',
+    href: '#',
+    placeholder: true,
+  },
+];
+---
+
+<section class="articles" id="articles">
+  <div class="section-inner">
+    <h2 class="section-title"><span class="num">03</span> Articles</h2>
+
+    <div class="articles-list">
+      {articles.map(article => (
+        <a href={article.href} class={`article-row ${article.placeholder ? 'is-placeholder' : ''}`}>
+          <span class="article-date">{article.date}</span>
+          <div class="article-body">
+            <span class="article-title">{article.title}</span>
+            <span class="article-subtitle">{article.subtitle}</span>
+          </div>
+          <span class="article-arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .articles {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 3.5rem;
+    line-height: 1;
+  }
+
+  .num {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 0.5em;
+    vertical-align: middle;
+  }
+
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-row {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--border);
+    transition: opacity 0.2s;
+  }
+
+  .article-row:last-child { border-bottom: 1px solid var(--border); }
+
+  .article-row:hover { opacity: 0.7; }
+  .is-placeholder { opacity: 0.5; }
+  .is-placeholder:hover { opacity: 0.7; }
+
+  .article-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .article-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .article-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .article-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .article-arrow {
+    color: var(--accent);
+    font-size: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .articles { padding: 4rem 1.25rem; }
+
+    .article-row {
+      grid-template-columns: 1fr auto;
+      row-gap: 0.25rem;
+    }
+
+    .article-date { grid-column: 1 / -1; margin-bottom: -0.5rem; }
+  }
+</style>
