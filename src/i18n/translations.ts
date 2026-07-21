@@ -14,29 +14,39 @@ export const translations = {
       title: 'Work',
       entries: [
         {
-          title: 'Independent iOS Developer & Mobile Architect',
-          place: 'Porto Alegre · remote',
-          description: 'Building Doppio and Raipe, and consulting on iOS architecture for product teams. Swift, SwiftUI, and the occasional strong opinion about dependency graphs.',
+          title: 'Senior iOS Engineer',
+          place: 'DBServices · remote · international team',
+          description: 'Architecture review of a Fintech app for App Store compliance. Pre-launch development of the Fox One streaming app (SwiftUI/MVVM). Implemented flows for the McClatchy white label app, powering 33 US local newspapers including The Miami Herald.',
+        },
+        {
+          title: 'Senior iOS Engineer',
+          place: 'BairesDev · remote · international team',
+          description: "Codebase modernization for ViaPath's ConnectNetwork — inmate family communication and money transfer app. Led Objective-C to Swift migration, implemented unit and UI testing, and improved architecture, code quality, and stability.",
+        },
+        {
+          title: 'Senior iOS Developer',
+          place: 'Hefesto · remote',
+          description: 'Solved an unsolved problem in 3D capture for broken limbs — built a reliable method for LiDAR-based scanning to print custom plastic orthosis, replacing plaster casts. Also developed a macOS desktop app for photogrammetry sessions using iOS-captured photos.',
+        },
+        {
+          title: 'Specialist iOS Developer',
+          place: 'Zup · Banco Itaú · remote',
+          description: 'Worked on the Itaú credit card app — the most important app of the largest bank in South America, with millions of users. Fully rebuilt the debt renegotiation flow, eliminating the iOS backlog relative to Android and Web platforms.',
         },
         {
           title: 'Mobile Architect',
-          place: 'Placeholder Corp — replace with real role',
-          description: 'Led the iOS practice through the transition from Objective-C to Swift; shipped and maintained consumer apps used by millions.',
-        },
-        {
-          title: 'Senior Software Engineer',
-          place: 'Placeholder Systems — replace with real role',
-          description: 'Desktop and embedded systems in C and C++. Learned that shipping is a feature.',
+          place: '+A Educação · remote',
+          description: 'Conceived and led development of the Consulta +Rápida by ArtMed platform — medical and psychiatric content apps. Designed infrastructure to host multiple apps, including backend, database, and content indexing systems. Collaborated with C-level executives and doctors.',
         },
         {
           title: "Master's in Computer Science",
           place: 'UFRGS — Universidade Federal do Rio Grande do Sul',
-          description: 'Research placeholder — replace with thesis topic.',
+          description: 'Graduate research in computer science. Bachelor in Computer Science from the same institution (1983–1988).',
         },
         {
           title: 'First line of assembly',
           place: 'A TK85, a bedroom, a cassette deck',
-          description: 'Where it all started.',
+          description: 'Programmer since 1980. The machine was slow. The curiosity was not.',
         },
       ],
     },
@@ -85,29 +95,39 @@ export const translations = {
       title: 'Experiência',
       entries: [
         {
-          title: 'Desenvolvedor iOS Independente & Arquiteto Mobile',
-          place: 'Porto Alegre · remoto',
-          description: 'Construindo o Doppio e o Raipe, e consultando equipes de produto em arquitetura iOS. Swift, SwiftUI e opiniões fortes sobre grafos de dependência.',
+          title: 'Engenheiro iOS Sênior',
+          place: 'DBServices · remoto · equipe internacional',
+          description: 'Revisão de arquitetura de app Fintech para conformidade com App Store. Desenvolvimento pré-lançamento do Fox One (streaming, SwiftUI/MVVM). Implementação de fluxos no app white label da McClatchy para 33 jornais americanos, incluindo o Miami Herald.',
+        },
+        {
+          title: 'Engenheiro iOS Sênior',
+          place: 'BairesDev · remoto · equipe internacional',
+          description: 'Modernização do ConnectNetwork da ViaPath — app de comunicação de familiares de detentos. Migração de Objective-C para Swift, implementação de testes unitários e de UI, melhorias de arquitetura, qualidade e estabilidade.',
+        },
+        {
+          title: 'Desenvolvedor iOS Sênior',
+          place: 'Hefesto · remoto',
+          description: 'Resolveu um problema inédito de captura 3D para membros fraturados — método de escaneamento LiDAR para impressão de órteses plásticas personalizadas, substituindo o gesso. Também desenvolveu app macOS para sessões de fotogrametria com imagens iOS.',
+        },
+        {
+          title: 'Desenvolvedor iOS Especialista',
+          place: 'Zup · Banco Itaú · remoto',
+          description: 'Trabalhou no app de cartão de crédito do Itaú — o app mais importante do maior banco da América do Sul, com milhões de usuários. Reconstruiu integralmente o fluxo de renegociação de dívidas, eliminando o backlog iOS em relação às plataformas Android e Web.',
         },
         {
           title: 'Arquiteto Mobile',
-          place: 'Placeholder Corp — substituir com empresa real',
-          description: 'Liderou a prática iOS durante a transição de Objective-C para Swift; entregou e manteve apps com milhões de usuários.',
-        },
-        {
-          title: 'Engenheiro de Software Sênior',
-          place: 'Placeholder Systems — substituir com empresa real',
-          description: 'Sistemas desktop e embarcados em C e C++. Aprendi que entregar é uma feature.',
+          place: '+A Educação · remoto',
+          description: 'Concebeu e liderou o desenvolvimento da plataforma Consulta +Rápida by ArtMed — apps de conteúdo médico e psiquiátrico. Projetou infraestrutura para múltiplos apps, incluindo backend, banco de dados e sistema de indexação de conteúdo. Colaboração com C-level e médicos.',
         },
         {
           title: 'Mestrado em Ciência da Computação',
           place: 'UFRGS — Universidade Federal do Rio Grande do Sul',
-          description: 'Placeholder de pesquisa — substituir com tema da dissertação.',
+          description: 'Pesquisa de pós-graduação em ciência da computação. Bacharelado em Ciência da Computação pela mesma instituição (1983–1988).',
         },
         {
           title: 'Primeira linha de assembly',
           place: 'Um TK85, um quarto, um gravador cassete',
-          description: 'Onde tudo começou.',
+          description: 'Programador desde 1980. A máquina era lenta. A curiosidade, não.',
         },
       ],
     },
