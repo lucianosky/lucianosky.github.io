@@ -3,10 +3,15 @@
 
 <section class="hero">
   <div class="hero-bg">
-    <!-- Replace hero-photo.jpg with actual photo in /public -->
-    <div class="hero-photo" style="background-image: url('/hero-photo.jpg')"></div>
     <div class="hero-gradient"></div>
   </div>
+
+  <img
+    class="hero-photo"
+    src="/hero-photo.png"
+    alt="Luciano Sclovsky"
+    aria-hidden="true"
+  />
 
   <div class="hero-content">
     <p class="role">Senior iOS Developer · Mobile Architect</p>
@@ -61,28 +66,33 @@
     inset: 0;
   }
 
-  .hero-photo {
+  img.hero-photo {
     position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center right;
-    background-repeat: no-repeat;
-    opacity: 0.6;
+    right: 5%;
+    bottom: 0;
+    height: 88%;
+    width: auto;
+    object-fit: contain;
+    object-position: bottom;
+    z-index: 0;
+    opacity: 0.85;
+    /* subtle inner glow to blend with dark bg */
+    filter: drop-shadow(0 0 60px rgba(21, 16, 10, 0.6));
   }
 
   .hero-gradient {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(to right, rgba(21, 16, 10, 0.92) 40%, rgba(21, 16, 10, 0.2) 100%),
-      linear-gradient(to top, rgba(21, 16, 10, 0.8) 0%, transparent 40%);
+      linear-gradient(to right, rgba(21, 16, 10, 0.96) 35%, rgba(21, 16, 10, 0.1) 75%),
+      linear-gradient(to top, rgba(21, 16, 10, 0.9) 0%, transparent 30%);
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
     padding: 0 2.5rem;
-    max-width: 640px;
+    max-width: 600px;
   }
 
   .role {
@@ -200,14 +210,16 @@
       padding-bottom: 3rem;
     }
 
-    .hero-photo {
-      background-position: top center;
-      opacity: 0.3;
+    img.hero-photo {
+      right: -10%;
+      height: 55%;
+      bottom: auto;
+      top: 5rem;
+      opacity: 0.35;
     }
 
     .hero-gradient {
-      background:
-        linear-gradient(to bottom, rgba(21, 16, 10, 0.6) 0%, rgba(21, 16, 10, 0.95) 60%);
+      background: linear-gradient(to bottom, rgba(21, 16, 10, 0.5) 0%, rgba(21, 16, 10, 0.97) 65%);
     }
 
     .hero-content {
