@@ -10,10 +10,11 @@ const { lang = 'en' } = Astro.props;
     <a href="/" class="wordmark">LUCIANO SCLOVSKY</a>
 
     <div class="nav-center">
-      <a href="#work"><span class="num">01</span> WORK</a>
-      <a href="#apps"><span class="num">02</span> APPS</a>
-      <a href="#articles"><span class="num">03</span> ARTICLES</a>
-      <a href="#contact"><span class="num">04</span> CONTACT</a>
+      <a href="#work"><span class="num">01</span> <span data-i18n="work.title">WORK</span></a>
+      <a href="#apps"><span class="num">02</span> <span data-i18n="apps.title">APPS</span></a>
+      <a href="#articles"><span class="num">03</span> <span data-i18n="articles.title">ARTICLES</span></a>
+      <a href="#community"><span class="num">04</span> <span data-i18n="community.title">COMMUNITY</span></a>
+      <a href="#contact"><span class="num">05</span> <span data-i18n="contact.title">CONTACT</span></a>
     </div>
 
     <div class="lang-toggle">
@@ -30,10 +31,11 @@ const { lang = 'en' } = Astro.props;
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#work" class="mobile-link"><span class="num">01</span> WORK</a>
-    <a href="#apps" class="mobile-link"><span class="num">02</span> APPS</a>
-    <a href="#articles" class="mobile-link"><span class="num">03</span> ARTICLES</a>
-    <a href="#contact" class="mobile-link"><span class="num">04</span> CONTACT</a>
+    <a href="#work" class="mobile-link"><span class="num">01</span> <span data-i18n="work.title">WORK</span></a>
+    <a href="#apps" class="mobile-link"><span class="num">02</span> <span data-i18n="apps.title">APPS</span></a>
+    <a href="#articles" class="mobile-link"><span class="num">03</span> <span data-i18n="articles.title">ARTICLES</span></a>
+    <a href="#community" class="mobile-link"><span class="num">04</span> <span data-i18n="community.title">COMMUNITY</span></a>
+    <a href="#contact" class="mobile-link"><span class="num">05</span> <span data-i18n="contact.title">CONTACT</span></a>
 
     <div class="mobile-lang-toggle">
       <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
