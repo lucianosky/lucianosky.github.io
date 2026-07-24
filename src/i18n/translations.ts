@@ -14,24 +14,29 @@ export const translations = {
       title: 'Work',
       entries: [
         {
+          title: 'Freelance iOS Developer',
+          place: 'Confidential client · via Techflow',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+        },
+        {
           title: 'Senior iOS Engineer',
           place: 'DBServices · remote · international team',
-          description: 'Architecture review of a Fintech app for App Store compliance. Pre-launch development of the Fox One streaming app (SwiftUI/MVVM). Implemented flows for the McClatchy white label app, powering 33 US local newspapers including The Miami Herald.',
+          description: 'Architecture review of a Fintech app for App Store compliance. Development of the Fox One streaming app (SwiftUI/MVVM). Implemented flows for the McClatchy white label app, powering 33 US local newspapers including The Miami Herald.',
         },
         {
           title: 'Senior iOS Engineer',
           place: 'BairesDev · remote · international team',
-          description: "Codebase modernization for ViaPath's ConnectNetwork — inmate family communication and money transfer app. Led Objective-C to Swift migration, implemented unit and UI testing, and improved architecture, code quality, and stability.",
+          description: "Codebase modernization for ViaPath's ConnectNetwork — a platform enabling communication and money transfers from families to incarcerated individuals. Led Objective-C to Swift migration, implemented unit and UI testing from scratch, and improved architecture, code quality, and stability.",
         },
         {
           title: 'Senior iOS Developer',
           place: 'Hefesto · remote',
-          description: 'Solved an unsolved problem in 3D capture for broken limbs — built a reliable method for LiDAR-based scanning to print custom plastic orthosis, replacing plaster casts. Also developed a macOS desktop app for photogrammetry sessions using iOS-captured photos.',
+          description: 'Solved a novel 3D capture problem for broken limbs — built a reliable method for LiDAR-based scanning to print custom plastic orthosis, replacing plaster casts. Also developed a macOS app for photogrammetry sessions using iOS-captured photos.',
         },
         {
-          title: 'Specialist iOS Developer',
+          title: 'Senior iOS Developer',
           place: 'Zup · Banco Itaú · remote',
-          description: 'Worked on the Itaú credit card app — the most important app of the largest bank in South America, with millions of users. Fully rebuilt the debt renegotiation flow, eliminating the iOS backlog relative to Android and Web platforms.',
+          description: 'Worked on the Itaú credit card app — one of the most widely used banking apps in South America, with 1M+ active users. Fully rebuilt the debt renegotiation flow, eliminating a long-standing iOS gap relative to Android and Web.',
         },
         {
           title: 'Mobile Architect',
@@ -69,10 +74,18 @@ export const translations = {
         { subtitle: 'Precision as a hobby.' },
       ],
     },
+    community: {
+      title: 'Community',
+      tdc_label: 'TheDevConf (TDC)',
+      tdc_description: "Brazil's largest tech conference. iOS Track Coordinator across 5 editions in Porto Alegre, Florianópolis, and São Paulo (2018–2019). Also coordinated the Visual Thinking track in 2 editions. Speaker and organizing committee member.",
+      cocoaheads_label: 'CocoaHeads Porto Alegre',
+      cocoaheads_description: 'Co-organizer of the Porto Alegre iOS developer community.',
+    },
     cv: {
       headline: 'The full trajectory, on paper.',
       subline: 'Forty years condensed into two pages.',
-      button: 'DOWNLOAD CV ↓',
+      button_en: 'DOWNLOAD CV (EN) ↓',
+      button_pt: 'DOWNLOAD CV (PT) ↓',
     },
     contact: {
       title: 'Contact',
@@ -95,24 +108,29 @@ export const translations = {
       title: 'Experiência',
       entries: [
         {
+          title: 'Desenvolvedor iOS Freelance',
+          place: 'Cliente confidencial · via Techflow',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.',
+        },
+        {
           title: 'Engenheiro iOS Sênior',
           place: 'DBServices · remoto · equipe internacional',
-          description: 'Revisão de arquitetura de app Fintech para conformidade com App Store. Desenvolvimento pré-lançamento do Fox One (streaming, SwiftUI/MVVM). Implementação de fluxos no app white label da McClatchy para 33 jornais americanos, incluindo o Miami Herald.',
+          description: 'Revisão de arquitetura de app Fintech para conformidade com App Store. Desenvolvimento do Fox One (streaming, SwiftUI/MVVM). Implementação de fluxos no app white label da McClatchy para 33 jornais americanos, incluindo o Miami Herald.',
         },
         {
           title: 'Engenheiro iOS Sênior',
           place: 'BairesDev · remoto · equipe internacional',
-          description: 'Modernização do ConnectNetwork da ViaPath — app de comunicação de familiares de detentos. Migração de Objective-C para Swift, implementação de testes unitários e de UI, melhorias de arquitetura, qualidade e estabilidade.',
+          description: 'Modernização do ConnectNetwork da ViaPath — plataforma que permite comunicação e transferências de dinheiro de familiares para pessoas encarceradas. Migração de Objective-C para Swift, implementação de testes unitários e de UI do zero, melhorias de arquitetura, qualidade e estabilidade.',
         },
         {
           title: 'Desenvolvedor iOS Sênior',
           place: 'Hefesto · remoto',
-          description: 'Resolveu um problema inédito de captura 3D para membros fraturados — método de escaneamento LiDAR para impressão de órteses plásticas personalizadas, substituindo o gesso. Também desenvolveu app macOS para sessões de fotogrametria com imagens iOS.',
+          description: 'Solucionou um problema inédito de captura 3D para ossos quebrados — método de escaneamento LiDAR para impressão de órteses plásticas personalizadas, substituindo o gesso. Também desenvolveu app macOS para sessões de fotogrametria com imagens iOS.',
         },
         {
-          title: 'Desenvolvedor iOS Especialista',
+          title: 'Desenvolvedor iOS Sênior',
           place: 'Zup · Banco Itaú · remoto',
-          description: 'Trabalhou no app de cartão de crédito do Itaú — o app mais importante do maior banco da América do Sul, com milhões de usuários. Reconstruiu integralmente o fluxo de renegociação de dívidas, eliminando o backlog iOS em relação às plataformas Android e Web.',
+          description: 'Trabalhou no app de cartão de crédito do Itaú — um dos apps bancários mais utilizados na América do Sul, com mais de 1 milhão de usuários ativos. Reconstruiu integralmente o fluxo de renegociação de dívidas, eliminando uma lacuna histórica do iOS em relação às plataformas Android e Web.',
         },
         {
           title: 'Arquiteto Mobile',
@@ -150,10 +168,18 @@ export const translations = {
         { subtitle: 'Precisão como hobby.' },
       ],
     },
+    community: {
+      title: 'Comunidade',
+      tdc_label: 'TheDevConf (TDC)',
+      tdc_description: 'O maior evento de tecnologia do Brasil. Coordenador da Trilha iOS em 5 edições em Porto Alegre, Florianópolis e São Paulo (2018–2019). Também coordenou a trilha Visual Thinking em 2 edições. Palestrante e membro do comitê organizador.',
+      cocoaheads_label: 'CocoaHeads Porto Alegre',
+      cocoaheads_description: 'Co-organizador da comunidade de desenvolvedores iOS de Porto Alegre.',
+    },
     cv: {
       headline: 'A trajetória completa, no papel.',
       subline: 'Quarenta anos condensados em duas páginas.',
-      button: 'BAIXAR CV ↓',
+      button_en: 'BAIXAR CV (EN) ↓',
+      button_pt: 'BAIXAR CV (PT) ↓',
     },
     contact: {
       title: 'Contato',

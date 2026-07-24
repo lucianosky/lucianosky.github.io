@@ -1,0 +1,87 @@
+---
+---
+
+<section class="community" id="community">
+  <div class="section-inner">
+    <h2 class="section-title">
+      <span class="num">04</span>
+      <span data-i18n="community.title">Community</span>
+    </h2>
+
+    <div class="community-list">
+      <div class="community-entry">
+        <div class="entry-label" data-i18n="community.tdc_label">TheDevConf (TDC)</div>
+        <p class="entry-description" data-i18n="community.tdc_description">
+          Brazil's largest tech conference. iOS Track Coordinator across 5 editions in Porto Alegre,
+          Florianópolis, and São Paulo (2018–2019). Also coordinated the Visual Thinking track in 2 editions.
+          Speaker and organizing committee member.
+        </p>
+      </div>
+
+      <div class="community-entry">
+        <div class="entry-label" data-i18n="community.cocoaheads_label">CocoaHeads Porto Alegre</div>
+        <p class="entry-description" data-i18n="community.cocoaheads_description">
+          Co-organizer of the Porto Alegre iOS developer community.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .community {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-inner { max-width: 900px; margin: 0 auto; }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 3.5rem;
+    line-height: 1;
+  }
+
+  .num {
+    color: var(--accent);
+    margin-right: 0.5rem;
+    font-size: 0.5em;
+    vertical-align: middle;
+  }
+
+  .community-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .community-entry {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  .entry-label {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .entry-description {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 680px;
+  }
+
+  @media (max-width: 600px) {
+    .community { padding: 4rem 1.25rem; }
+  }
+</style>
